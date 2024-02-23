@@ -1,0 +1,37 @@
+# -----------------------------------------------------------------------------
+# The base image for building the k9s binary
+
+FROM golang:1.21.5-alpine3.17 AS build
+
+WORKDIR /k9s
+COPY go.mod go.sum main.go ./
+COPY internal internal
+COPY cmd cmd 
+
+RUN mkdir execs
+
+# Run Builder
+COPY builder.yaml ./
+COPY builder /usr/local/bin/builder
+RUN builder -d -v
+
+# -----------------------------------------------------------------------------
+# Build the final Docker image
+
+FROM alpine:3.19.1
+ARG KUBECTL_VERSION="v1.29.0"
+
+# For Builder use
+COPY --from=build /root/.builder/builds.json /root/.builder/builds.json
+COPY --from=build /k9s/builder_builds /k9s/builder_builds
+
+COPY --from=build /k9s/execs/k9s /bin/k9s
+RUN apk add --update ca-certificates \
+  && apk add --update -t deps curl vim \
+  && TARGET_ARCH=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/) \
+  && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/${TARGET_ARCH}/kubectl -o /usr/local/bin/kubectl \
+  && chmod +x /usr/local/bin/kubectl \
+  && apk del --purge deps \
+  && rm /var/cache/apk/*
+
+ENTRYPOINT [ "/bin/k9s" ]

@@ -1,0 +1,47 @@
+dockerbuild:
+  projectname: k9s
+  projecttype: Go
+  artifactname: k9s
+  artifactchecksums: '[{name:k9s checksum:41a82d32327cae147079fe192fc340e3734c65a53a0bcce514f3fb24b1ab355d}]'
+  artifactlocation: ./execs
+  logslocation: /k9s/builder_builds/k9s_1708619625/logs/logs.json
+  username: root
+  homedir: /root
+  ip: 172.17.0.4
+  starttime: Thursday, 22-Feb-24 16:33:45 UTC
+  endtime: Thursday, 22-Feb-24 16:35:11 UTC
+  giturl: ""
+  mastergithash: undefined
+  branchname: ""
+  buildid: b2ce5161c
+dockerimagetag:
+  projectname: k9s
+  projecttype: Go
+  artifactname: ""
+  artifactchecksums: ""
+  artifactlocation: ./execs
+  logslocation: /Users/katieharris/Documents/test/k9s/builder_builds/k9s_1708619625/logs/logs.json
+  username: katieharris
+  homedir: /Users/katieharris
+  ip: 10.0.0.102
+  starttime: Thursday, 22-Feb-24 16:33:45 UTC
+  endtime: Thursday, 22-Feb-24 16:35:11 UTC
+  giturl: https://github.com/AuditDeploy/k9s.git
+  mastergithash: f2f4077b592dcbb4162cbfe07bd99546d47d9955
+  branchname: ""
+projectname: k9s
+projecttype: Go
+username: katieharris
+starttime: Thursday, 22-Feb-24 16:33:45 UTC
+endtime: Thursday, 22-Feb-24 16:35:11 UTC
+giturl: https://github.com/AuditDeploy/k9s.git
+mastergithash: f2f4077b592dcbb4162cbfe07bd99546d47d9955
+buildid: b2ce5161c
+dockerrepositorytag: k9s:1708619625_b2ce5161c_root_f2f4077
+dockerrepository: k9s
+dockertags:
+- latest
+- 22_Feb_24_16H33M_UTC
+- 1708619625_b2ce5161c
+- 1708619625_b2ce5161c_root
+- 1708619625_b2ce5161c_root_f2f4077

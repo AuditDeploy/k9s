@@ -1,3 +1,19 @@
 projectname: k9s
-projecttype: go
-buildfile: main.go
+projectpath: ""
+projecttype: Go
+buildsdir: builder_builds
+buildtool: ""
+buildfile: ""
+prebuildcmd: ""
+configcmd: ""
+buildcmd: go build -v -x -o k9s
+artifactlist: ""
+outputpath: ./execs
+repobranch: ""
+appicon: ""
+docker:
+  dockerfile: BuilderDockerfile
+  registry: ""
+  version: ""
+push:
+  url: ""

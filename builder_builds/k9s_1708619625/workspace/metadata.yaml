@@ -1,0 +1,15 @@
+projectname: k9s
+projecttype: Go
+artifactname: ""
+artifactchecksums: ""
+artifactlocation: ./execs
+logslocation: /Users/katieharris/Documents/test/k9s/builder_builds/k9s_1708619625/logs/logs.json
+username: katieharris
+homedir: /Users/katieharris
+ip: 10.0.0.102
+starttime: Thursday, 22-Feb-24 16:33:45 UTC
+endtime: Thursday, 22-Feb-24 16:35:11 UTC
+giturl: https://github.com/AuditDeploy/k9s.git
+mastergithash: f2f4077b592dcbb4162cbfe07bd99546d47d9955
+branchname: ""
+appicon: ""
